@@ -6,8 +6,8 @@ class Zoo extends Tableau{
         this.load.image('MH2', 'assets/MH2.png');
         this.load.image('Glaceman', 'assets/Glaceman.jpg');
         this.load.image('clown', 'assets/clown.jpg');
-        this.load.image('Glaceman', 'assets/Glaceman.jpg');
-        this.load.image('Glaceman', 'assets/Glaceman.jpg');
+        this.load.image('terry', 'assets/terry.png');
+        this.load.image('dragon', 'assets/dragon.png');
     }
     create() {
         super.create();
@@ -26,7 +26,7 @@ class Zoo extends Tableau{
         this.physics.add.overlap(this.player, this.stars, this.ramasserEtoile, null, this);
 
         //notre monstre
-        this.monstre=this.physics.add.sprite(300,this.sys.canvas.height-70,"MH2");
+        this.monstre=this.physics.add.sprite(1000,this.sys.canvas.height-70,"MH2");
         this.monstre.setOrigin(0,0);
         this.monstre.setDisplaySize(70,70);
         this.monstre.setCollideWorldBounds(true);
@@ -54,16 +54,16 @@ class Zoo extends Tableau{
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
 
         //notre monstre 4
-        this.monstre=this.physics.add.sprite(600,this.sys.canvas.height-100,"");
+        this.monstre=this.physics.add.sprite(800,this.sys.canvas.height-0,"terry");
         this.monstre.setOrigin(0,0);
         this.monstre.setDisplaySize(70,70);
         this.monstre.setCollideWorldBounds(true);
         this.monstre.setBounce(1);
-        this.monstre.setVelocityX(50);
+        this.monstre.setVelocityX(0);
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
 
         //notre monstre 5
-        this.monstre=this.physics.add.sprite(600,this.sys.canvas.height-100,"");
+        this.monstre=this.physics.add.sprite(300,this.sys.canvas.height-100,"dragon");
         this.monstre.setOrigin(0,0);
         this.monstre.setDisplaySize(70,70);
         this.monstre.setCollideWorldBounds(true);
