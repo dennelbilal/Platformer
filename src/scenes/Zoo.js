@@ -8,6 +8,7 @@ class Zoo extends Tableau{
         this.load.image('clown', 'assets/clown.jpg');
         this.load.image('terry', 'assets/terry.png');
         this.load.image('dragon', 'assets/dragon.png');
+        
     }
     create() {
         super.create();
@@ -63,14 +64,7 @@ class Zoo extends Tableau{
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
 
         //notre monstre 5
-        this.monstre=this.physics.add.sprite(300,this.sys.canvas.height-100,"dragon");
-        this.monstre.setOrigin(0,0);
-        this.monstre.setDisplaySize(70,70);
-        this.monstre.setCollideWorldBounds(true);
-        this.monstre.setBounce(1);
-        this.monstre.setVelocityX(50);
-        this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
-
+        new dragon(this,400,100);
     }
 
 
