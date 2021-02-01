@@ -26,7 +26,7 @@ class Zoo extends Tableau{
         this.physics.add.overlap(this.player, this.stars, this.ramasserEtoile, null, this);
 
         //notre monstre
-        this.monstre=this.physics.add.sprite(1000,this.sys.canvas.height-70,"MH2");
+        /*this.monstre=this.physics.add.sprite(1000,this.sys.canvas.height-70,"MH2");
         this.monstre.setOrigin(0,0);
         this.monstre.setDisplaySize(70,70);
         this.monstre.setCollideWorldBounds(true);
@@ -69,7 +69,13 @@ class Zoo extends Tableau{
         this.monstre.setCollideWorldBounds(true);
         this.monstre.setBounce(1);
         this.monstre.setVelocityX(50);
-        this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
+        this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);**/
+
+        new monster(this,400,100);
+        new monster(this,400,100);
+        new monster(this,400,100);
+        new monster(this,400,100);
+        new monster(this,400,100);
     }
 
 
