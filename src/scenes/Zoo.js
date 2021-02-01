@@ -75,7 +75,7 @@ class Zoo extends Tableau{
         new Monster(this,400,100);
         new Monster(this,400,100);
         new Monster(this,400,100);
-        new Monster(this,400,100);
+        new Monster(this,600,100);
     }
 
 

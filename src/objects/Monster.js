@@ -6,9 +6,9 @@ class Monster extends ObjetEnnemi{
      * @param y
      */
     constructor(scene, x, y) {
-        super(scene, x, y, "monster");
+        super(scene, x, y, "Monster");
         //pas de gravité
-        this.body.allowGravity=false;
+        this.body.allowGravity=true;
 
         //gestion de la taille
         this.setDisplaySize(64,64);
