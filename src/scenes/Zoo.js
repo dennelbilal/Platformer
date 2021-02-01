@@ -71,11 +71,11 @@ class Zoo extends Tableau{
         this.monstre.setVelocityX(50);
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);**/
 
-        new monster(this,400,100);
-        new monster(this,400,100);
-        new monster(this,400,100);
-        new monster(this,400,100);
-        new monster(this,400,100);
+        new Monster(this,400,100);
+        new Monster(this,400,100);
+        new Monster(this,400,100);
+        new Monster(this,400,100);
+        new Monster(this,400,100);
     }
 
 
