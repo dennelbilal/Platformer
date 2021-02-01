@@ -14,11 +14,11 @@ class Tableau00 extends Tableau{
 
         this.star2=this.physics.add.sprite(400,100,"star");
         this.star2.setCollideWorldBounds(true);
-        this.star2.setBounce(0.5);
+        this.star2.setBounce(0);
 
         this.star3=this.physics.add.sprite(600,100,"star");
         this.star3.setCollideWorldBounds(true);
-        this.star3.setBounce(1);
+        this.star3.setBounce(0);
 
         //quand le joueur touche une étoile on appelle la fonction ramasserEtoile
         this.physics.add.overlap(this.player, this.star1, this.ramasserEtoile, null, this);
