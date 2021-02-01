@@ -15,7 +15,7 @@ let config = {
     },
     scene: [
         new Ui(),
-
+        new Zoo("Vague de monstre"),
         new Tableau00("Des étoiles"),
         new Tableau01("Des plateformes"),
         new Tableau02("Plein d'étoiles"),
