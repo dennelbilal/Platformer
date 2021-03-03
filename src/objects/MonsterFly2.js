@@ -1,4 +1,4 @@
-class Monster extends ObjetEnnemi{
+class MonsterFly2 extends ObjetEnnemi{
     /**
      *
      * @param {Tableau} scene
@@ -6,9 +6,9 @@ class Monster extends ObjetEnnemi{
      * @param y
      */
     constructor(scene, x, y) {
-        super(scene, x, y, "MH2");
+        super(scene, x, y, "dragon");
         //pas de gravité
-        this.body.allowGravity=true;
+        this.body.allowGravity=false;
 
         //gestion de la taille
         this.setDisplaySize(64,64);
