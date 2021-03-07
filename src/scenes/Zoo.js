@@ -30,6 +30,40 @@ class Zoo extends Tableau{
         this.monstre.setVelocityX(50);
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
 
+        //on change de ciel, on fait une tileSprite ce qui permet d'avoir une image qui se répète
+        this.sky=this.add.tileSprite(
+            0,
+            0,
+            this.sys.canvas.width,
+            this.sys.canvas.height,
+            'sky-2'
+        );
+        this.sky.setOrigin(0,0);
+        this.sky.setScrollFactor(0);//fait en sorte que le ciel ne suive pas la caméra
+        //on ajoute une deuxième couche de ciel
+        this.sky2=this.add.tileSprite(
+            0,
+            0,
+            this.sys.canvas.width,
+            this.sys.canvas.height,
+            'sky-2'
+        );
+        this.sky2.setScrollFactor(0);
+        this.sky2.setOrigin(0,0);
+        this.sky2.alpha=0.2;
+        //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
+
+
+        //fait passer les éléments devant le ciel
+        this.platforms.setDepth(10)
+        this.stars.setDepth(10)
+        this.player.setDepth(10)
+    }
+
+
+
+
+
 /*
         //notre monstre 2
         this.monstre=this.physics.add.sprite(600,this.sys.canvas.height-150,"Glaceman");
@@ -87,4 +121,4 @@ class Zoo extends Tableau{
 
 
 
-}
+
