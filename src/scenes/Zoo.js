@@ -4,6 +4,7 @@ class Zoo extends Tableau{
         super.preload();
         this.load.image('star', 'assets/star.png');
         this.load.image('MH2', 'assets/MH2.png');
+        this.load.image('sky-2', 'assets/sky-2.png');
     }
     create() {
         super.create();
@@ -55,7 +56,6 @@ class Zoo extends Tableau{
 
 
         //fait passer les éléments devant le ciel
-        this.platforms.setDepth(10)
         this.stars.setDepth(10)
         this.player.setDepth(10)
     }
