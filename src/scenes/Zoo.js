@@ -97,7 +97,6 @@ class Zoo extends Tableau{
         this.monstre.setBounce(1);
         this.monstre.setVelocityX(50);
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
-
         //notre monstre 3
         this.monstre=this.physics.add.sprite(500,this.sys.canvas.height-500,"clown");
         this.monstre.setOrigin(0,0);
@@ -106,7 +105,6 @@ class Zoo extends Tableau{
         this.monstre.setBounce(1);
         this.monstre.setVelocityX(0);
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
-
         //notre monstre 4
         this.monstre=this.physics.add.sprite(800,this.sys.canvas.height-0,"terry");
         this.monstre.setOrigin(0,0);
@@ -115,7 +113,6 @@ class Zoo extends Tableau{
         this.monstre.setBounce(1);
         this.monstre.setVelocityX(0);
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
-
         //notre monstre 5
         this.monstre=this.physics.add.sprite(300,this.sys.canvas.height-100,"dragon");
         this.monstre.setOrigin(0,0);
@@ -127,22 +124,16 @@ class Zoo extends Tableau{
 /*
         //MH2
         new Monster(this,700,100);
-
         //Glaceman
         new Monster2(this,800,100);
-
         //Clown
         new Monster3(this,300,100);
-
         //Terry
         new Monster4(this,500,100);
-
         //Dragon
         new MonsterFly2(this,600,100);
 **/
     }
-
-
 
 
 
