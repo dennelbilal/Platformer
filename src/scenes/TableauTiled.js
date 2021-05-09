@@ -67,7 +67,7 @@ class TableauTiled extends Tableau{
         //----------les étoiles (objets) ---------------------
 
         // c'est un peu plus compliqué, mais ça permet de maîtriser plus de choses...
-        this.stars = this.physics.add.group({
+        /*this.stars = this.physics.add.group({
             allowGravity: true,
             immovable: false,
             bounceY:1
@@ -77,7 +77,7 @@ class TableauTiled extends Tableau{
         this.starsObjects.forEach(starObject => {
             // Pour chaque étoile on la positionne pour que ça colle bien car les étoiles ne font pas 64x64
             let star = this.stars.create(starObject.x+32, starObject.y+32 , 'particles','star');
-        });
+        });*/
 
 
         //----------les monstres volants (objets tiled) ---------------------
@@ -155,7 +155,7 @@ class TableauTiled extends Tableau{
 
         //--------allez on se fait un peu la même en plus simple mais avec les étoiles----------
 
-        let starsFxContainer=ici.add.container();
+        /*let starsFxContainer=ici.add.container();
         this.stars.children.iterate(function(etoile) {
             let particles=ici.add.particles("particles","star");
             let emmiter=particles.createEmitter({
@@ -171,7 +171,7 @@ class TableauTiled extends Tableau{
             })
             emmiter.startFollow(etoile);
             starsFxContainer.add(particles);
-        });
+        });*/
 
 
 
@@ -189,12 +189,12 @@ class TableauTiled extends Tableau{
             collidingTileColor: new Phaser.Display.Color(0, 255, 0, 255), //Couleur des tiles qui collident
             faceColor: null // Color of colliding face edges
         });
-        //debug lave en rouge
-        this.lave.renderDebug(debug,{
+        /*debug lave en rouge
+        //this.lave.renderDebug(debug,{
             tileColor: null, // Couleur des tiles qui ne collident pas
             collidingTileColor: new Phaser.Display.Color(255, 0, 0, 255), //Couleur des tiles qui collident
             faceColor: null // Color of colliding face edges
-        });
+        });*/
 
 
         //---------- parallax ciel (rien de nouveau) -------------
@@ -237,14 +237,14 @@ class TableauTiled extends Tableau{
         //debug.setDepth(z--);
         //this.blood.setDepth(z--);
         //monstersContainer.setDepth(z--);
-        this.stars.setDepth(z--);
-        starsFxContainer.setDepth(z--);
+        //this.stars.setDepth(z--);
+        //starsFxContainer.setDepth(z--);
         //this.devant.setDepth(z--);
-        this.sol.setDepth(10120);
+        this.sol.setDepth(z--);
         //this.laveFxContainer.setDepth(z--);
-       // this.lave.setDepth(z--);
-        this.player.setDepth(10002);
-       // this.derriere.setDepth(z--);
+        //this.lave.setDepth(z--);
+        this.player.setDepth(z--);
+        //this.derriere.setDepth(z--);
         //this.sky2.setDepth(z--);
         //this.sky.setDepth(z--);
 
