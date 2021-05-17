@@ -12,7 +12,7 @@ class TableauTiled extends Tableau{
         super.preload();
         // ------pour TILED-------------
         // nos images
-        this.load.image('tiles', 'assets/tilet/tableauTiledTileset.png');
+        this.load.image('tiles', 'assets/tilet/tableau tiled 3.png');
         //les données du tableau qu'on a créé dans TILED
         this.load.tilemapTiledJSON('map', 'assets/tilet/tile.json');
         // -----et puis aussi-------------
