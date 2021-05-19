@@ -33,7 +33,7 @@ class TableauTiled extends Tableau{
         //notre map
         this.map = this.make.tilemap({ key: 'map' });
         //nos images qui vont avec la map
-        this.tileset = this.map.addTilesetImage('sol', 'tiles');
+        this.tileset = this.map.addTilesetImage('base', 'tiles');
         //on agrandit le champ de la caméra du coup
         let largeurDuTableau=this.map.widthInPixels;
         let hauteurDuTableau=this.map.heightInPixels;
