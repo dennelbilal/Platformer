@@ -12,7 +12,7 @@ class TableauTiled extends Tableau{
         super.preload();
         // ------pour TILED-------------
         // nos images
-        this.load.image('tiles', 'assets/tilet/tableautiled3.png');
+        this.load.image('tiles', 'assets/tilet/Sol grotte 2.png');
         //les données du tableau qu'on a créé dans TILED
         this.load.tilemapTiledJSON('map', 'assets/tilet/tile.json');
         // -----et puis aussi-------------
@@ -33,7 +33,7 @@ class TableauTiled extends Tableau{
         //notre map
         this.map = this.make.tilemap({ key: 'map' });
         //nos images qui vont avec la map
-        this.tileset = this.map.addTilesetImage('tableautiled3', 'tiles');
+        this.tileset = this.map.addTilesetImage('sol', 'tiles');
         //on agrandit le champ de la caméra du coup
         let largeurDuTableau=this.map.widthInPixels;
         let hauteurDuTableau=this.map.heightInPixels;
