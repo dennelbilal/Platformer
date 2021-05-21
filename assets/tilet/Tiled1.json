@@ -3,8 +3,8 @@
     {
      "export":
         {
-         "format":"json",
-         "target":"Tiled1.json"
+         "format":"tmx",
+         "target":"background.tmx"
         }
     },
  "height":40,
@@ -38,8 +38,8 @@
                  "type":"",
                  "visible":true,
                  "width":64,
-                 "x":4360.90909090909,
-                 "y":2541.84848484848
+                 "x":4358.90909090909,
+                 "y":2516.84848484848
                 }, 
                 {
                  "gid":18,
@@ -50,8 +50,8 @@
                  "type":"",
                  "visible":true,
                  "width":64,
-                 "x":63.969696969697,
-                 "y":1133.81818181818
+                 "x":64.969696969697,
+                 "y":1113.81818181818
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -60,7 +60,7 @@
          "y":0
         }],
  "nextlayerid":16,
- "nextobjectid":46,
+ "nextobjectid":44,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.4.2",

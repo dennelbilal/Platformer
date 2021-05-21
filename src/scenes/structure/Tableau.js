@@ -21,6 +21,10 @@ class Tableau extends Phaser.Scene{
             'assets/player.png',
             { frameWidth: 32, frameHeight: 48  }
         );
+        this.load.spritesheet('Laser',
+        'assets/laser_spriteSheet.png',
+        { frameWidth: 25, frameHeight: 167  }
+    );
     }
     create(){
         Tableau.current=this;
@@ -38,38 +42,52 @@ class Tableau extends Phaser.Scene{
          * @type {Player}
          */
         this.player=new Player(this,125,1800);
+        this.boutonTir = this.input.keyboard.addKey('A');
+
+        
 
     }
     update(){
         super.update();
         this.player.move();
+        this.tirPlayer();
+    }
+    tirPlayer(){
+        if (Phaser.Input.Keyboard.JustDown(this.boutonTir)){
+            this.player.shoot();
+        }   
     }
 
-    ramasserEtoile (player, star)
+    Bounding (player, ascenceur)
     {
-        star.disableBody(true, true);
-        //ui.gagne();
-
-        //va lister tous les objets de la scène pour trouver les étoies et vérifier si elles sont actives
-        let totalActive=0;
-        for(let child of this.children.getChildren()){
-            if(child.texture && child.texture.key==="star"){
-                if(child.active){
-                    totalActive++;
-                }
-            }
-        }
-        if(totalActive===0){
-            this.win();
-        }
-        /*
-        // this.stars est un groupe (plus tard)
-        if (this.stars.countActive(true) === 0)
-        {
-           this.win();
-        }
-         */
+        // setTimeout(function(){
+            player.setVelocityY(-850);
+        // },600);
     }
+
+    
+    // ui.gagne();
+
+    //     //va lister tous les objets de la scène pour trouver les étoies et vérifier si elles sont actives
+    //     let totalActive=0;
+    //     for(let child of this.children.getChildren()){
+    //         if(child.texture && child.texture.key==="star"){
+    //             if(child.active){
+    //                 totalActive++;
+    //             }
+    //         }
+    //     }
+    //     if(totalActive===0){
+    //         this.win();
+    //     }
+    //     /*
+    //     // this.stars est un groupe (plus tard)
+    //     if (this.stars.countActive(true) === 0)
+    //     {
+    //        this.win();
+    //     }
+    //      */
+    // }
 
     /**
      * Aïeee ça fait mal

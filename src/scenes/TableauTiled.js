@@ -17,7 +17,11 @@ class TableauTiled extends Tableau{
         // nos images
         this.load.image('tiles', 'assets/tilet/Sol grotte 2.png');
         //les données du tableau qu'on a créé dans TILED
-        this.load.tilemapTiledJSON('map', 'assets/tilet/tile.json');
+        this.load.image('tir', 'assets/star.png');
+        this.load.image('Ascenceur', 'assets/spike.png');
+
+
+        this.load.tilemapTiledJSON('map', 'assets/tilet/Tiled1.json');
         // -----et puis aussi-------------
         //this.load.image('monster-fly', 'assets/monster-fly.png');
         
@@ -82,6 +86,14 @@ class TableauTiled extends Tableau{
             let star = this.stars.create(starObject.x+32, starObject.y+32 , 'particles','star');
         });*/
 
+        let ascenceurContainer=this.add.container();
+        ici.ascenceurObjects = ici.map.getObjectLayer('as')['objects'];
+        // On crée des montres volants pour chaque objet rencontré
+        ici.ascenceurObjects.forEach(ascenceurObject => {
+            let ascenceur=new Ascenceur(this,ascenceurObject.x,ascenceurObject.y);
+            ascenceurContainer.add(ascenceur);
+            ici.physics.add.collider(ascenceur, this.player,this.Bounding,null,this);
+        });
 
         //----------les monstres volants (objets tiled) ---------------------
 
@@ -239,6 +251,7 @@ class TableauTiled extends Tableau{
         let z=1000; //niveau Z qui a chaque fois est décrémenté.
         //debug.setDepth(z--);
         //this.blood.setDepth(z--);
+        ascenceurContainer.setDepth(z--);
         //monstersContainer.setDepth(z--);
         //this.stars.setDepth(z--);
         //starsFxContainer.setDepth(z--);

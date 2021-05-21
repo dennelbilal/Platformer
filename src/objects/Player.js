@@ -61,18 +61,33 @@ class Player extends Phaser.Physics.Arcade.Sprite{
 
         switch (true){
             case this._directionX<0:
-                this.setVelocityX(-180);
+                this.sens=-1;
+                this.setVelocityX(-700);
                 this.anims.play('left', true);
                 break;
             case this._directionX>0:
-
-                this.setVelocityX(180);
+                this.sens=1;
+                this.setVelocityX(700);
                 this.anims.play('right', true);
                 break;
             default:
                 this.setVelocityX(0);
-                this.anims.play('turn');
+                this.anims.play('turn', true);
         }
+        // switch (true){
+        //     case this._directionX<0:
+        //         this.setVelocityX(-180);
+        //         this.anims.play('left', true);
+        //         break;
+        //     case this._directionX>0:
+
+        //         this.setVelocityX(180);
+        //         this.anims.play('right', true);
+        //         break;
+        //     default:
+        //         this.setVelocityX(0);
+        //         this.anims.play('turn');
+        // }
 
         if(this._directionY<0){
             if(this.body.blocked.down || this.body.touching.down){
@@ -82,42 +97,12 @@ class Player extends Phaser.Physics.Arcade.Sprite{
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    shoot()
+    {
+        var bullet = new Tir(this.scene,this.x, this.y);
+        console.log("Tir");
+        setTimeout(function(){
+            bullet.destroy();
+        },1500);
+    }
 }
