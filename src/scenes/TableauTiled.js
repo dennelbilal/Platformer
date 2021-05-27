@@ -21,7 +21,7 @@ class TableauTiled extends Tableau{
         this.load.image('Ascenceur', 'assets/spike.png');
 
 
-        this.load.tilemapTiledJSON('map', 'assets/tilet/Tiled1.json');
+        this.load.tilemapTiledJSON('map', 'assets/tilet/Tiled3.json');
         // -----et puis aussi-------------
         //this.load.image('monster-fly', 'assets/monster-fly.png');
         
@@ -97,13 +97,13 @@ class TableauTiled extends Tableau{
 
         //----------les monstres volants (objets tiled) ---------------------
 
-        //let monstersContainer=this.add.container();
-        //this.flyingMonstersObjects = this.map.getObjectLayer('flyingMonsters')['objects'];
+        this.monstersContainer=this.add.container();
+        this.modMonstersObjects = this.map.getObjectLayer('mod')['objects'];
         // On crée des montres volants pour chaque objet rencontré
-        /*this.flyingMonstersObjects.forEach(monsterObject => {
-            let monster=new MonsterFly(this,monsterObject.x,monsterObject.y);
-            monstersContainer.add(monster);
-        });*/
+        this.modMonstersObjects.forEach(monsterObject => {
+            let monster=new Monster(this,monsterObject.x,monsterObject.y);
+            this.monstersContainer.add(monster);
+        });
 
         //--------effet sur la lave------------------------
 
@@ -252,7 +252,7 @@ class TableauTiled extends Tableau{
         //debug.setDepth(z--);
         //this.blood.setDepth(z--);
         ascenceurContainer.setDepth(z--);
-        //monstersContainer.setDepth(z--);
+        this.monstersContainer.setDepth(z--);
         //this.stars.setDepth(z--);
         //starsFxContainer.setDepth(z--);
         //this.devant.setDepth(z--);

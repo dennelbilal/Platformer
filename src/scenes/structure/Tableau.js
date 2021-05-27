@@ -17,9 +17,13 @@ class Tableau extends Phaser.Scene{
     preload(){
         this.load.image('sky', 'assets/sky.png');
         this.load.image('spike', 'assets/spike.png');
-        this.load.spritesheet('player',
-            'assets/player.png',
-            { frameWidth: 32, frameHeight: 48  }
+        this.load.spritesheet('joueur',
+            'assets/joueur2.png',
+            { frameWidth: 71, frameHeight: 76  }
+        );
+        this.load.spritesheet('player_stance',
+            'assets/joueur3.png',
+            { frameWidth: 71, frameHeight: 75  }
         );
         this.load.spritesheet('Laser',
         'assets/laser_spriteSheet.png',

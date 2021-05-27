@@ -6,7 +6,7 @@ class menus extends Phaser.Scene{
     preload ()
     {
     
-        this.load.image('ecran', 'assets/image.jpg');
+        this.load.image('ecran', 'assets/image.png');
         //this.load.image('bouton', 'assets/bouton.png');
         
         

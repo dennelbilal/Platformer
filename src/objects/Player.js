@@ -8,20 +8,20 @@ class Player extends Phaser.Physics.Arcade.Sprite{
         this.setBounce(0.0);
         this.setGravityY(600)
         this.setFriction(1,1);
-
-        this.setBodySize(this.body.width-6,this.body.height-10);
-        this.setOffset(3, 10);
+        this.setDisplaySize(30,43)
+        this.setBodySize(this.body.width,this.body.height+39);
+        this.setOffset(20, 5);
 
         this.anims.create({
             key: 'left',
-            frames: this.anims.generateFrameNumbers('player', { start: 0, end: 3 }),
+            frames: this.anims.generateFrameNumbers('joueur', { start: 0, end: 4 }),
             frameRate: 10,
             repeat: -1
         });
 
         this.anims.create({
             key: 'right',
-            frames: this.anims.generateFrameNumbers('player', { start: 5, end: 8 }),
+            frames: this.anims.generateFrameNumbers('joueur', { start: 5, end: 10 }),
             frameRate: 10,
             repeat: -1
         });
@@ -29,6 +29,20 @@ class Player extends Phaser.Physics.Arcade.Sprite{
             key: 'turn',
             frames: [ { key: 'player', frame: 4 } ],
             frameRate: 20
+        });
+
+        this.anims.create({
+            key: 'stance',
+            frames: this.anims.generateFrameNumbers('player_stance', { start: 1, end: 1  }),
+            frameRate: 5,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: 'back',
+            frames: this.anims.generateFrameNumbers('player_stance', { start: 0, end: 0  }),
+            frameRate: 5,
+            repeat: -1
         });
 
         this._directionX=0;
@@ -62,17 +76,18 @@ class Player extends Phaser.Physics.Arcade.Sprite{
         switch (true){
             case this._directionX<0:
                 this.sens=-1;
-                this.setVelocityX(-700);
+                this.setVelocityX(-300);
                 this.anims.play('left', true);
                 break;
             case this._directionX>0:
                 this.sens=1;
-                this.setVelocityX(700);
+                this.setVelocityX(300);
                 this.anims.play('right', true);
                 break;
             default:
                 this.setVelocityX(0);
-                this.anims.play('turn', true);
+                this.anims.play('stance', true);
+                this.anims.play(this.sens===-1 ? 'back' : 'stance' ,true);
         }
         // switch (true){
         //     case this._directionX<0:

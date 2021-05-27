@@ -1,4 +1,4 @@
-class Monster2 extends ObjetEnnemi{
+class Monster extends ObjetEnnemi{
     /**
      *
      * @param {Tableau} scene
@@ -6,16 +6,16 @@ class Monster2 extends ObjetEnnemi{
      * @param y
      */
     constructor(scene, x, y) {
-        super(scene, x, y, "Glaceman");
+        super(scene, x, y, "Mob");
         //pas de gravité
-        this.body.allowGravity=false;
+        this.body.allowGravity=true;
 
         //gestion de la taille
         this.setDisplaySize(64,64);
 
         //on réduit un peu la zone de hit
-        this.setBodySize(this.body.width-400,this.body.height-0);
-        this.setOffset(150, 250);
+        this.setBodySize(this.body.width,this.body.height);
+        this.setOffset(0, 0);
 
         //définir les propriété que l'on va utiliser dans notre animation
 
