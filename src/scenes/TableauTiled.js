@@ -16,7 +16,7 @@ class TableauTiled extends Tableau{
         // ------pour TILED-------------
         // nos images
         this.load.image('tiles', 'assets/tilet/Sol grotte 2.png');
-        this.load.image('tiles1', 'assets/tilet/baka.png');
+        this.load.image('tiles1', 'assets/tilet/bakabaka.png');
         //les données du tableau qu'on a créé dans TILED
         this.load.image('tir', 'assets/star.png');
         this.load.image('Ascenceur', 'assets/spike.png');
