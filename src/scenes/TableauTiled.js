@@ -16,12 +16,19 @@ class TableauTiled extends Tableau{
         // ------pour TILED-------------
         // nos images
         this.load.image('tiles', 'assets/tilet/Sol grotte 2.png');
+        this.load.image('tiles1', 'assets/tilet/baka.png');
         //les données du tableau qu'on a créé dans TILED
         this.load.image('tir', 'assets/star.png');
         this.load.image('Ascenceur', 'assets/spike.png');
+        this.load.image('Plat', 'assets/tilet/BOIs.png');
+        this.load.image('Mob', 'assets/Mob.jpg');
+
+
 
 
         this.load.tilemapTiledJSON('map', 'assets/tilet/Tiled3.json');
+        this.load.tilemapTiledJSON('map1', 'assets/tilet/tileddebug.json');
+
         // -----et puis aussi-------------
         //this.load.image('monster-fly', 'assets/monster-fly.png');
         
@@ -39,8 +46,12 @@ class TableauTiled extends Tableau{
 
         //notre map
         this.map = this.make.tilemap({ key: 'map' });
+        this.map1 = this.make.tilemap({ key: 'map1' });
+
         //nos images qui vont avec la map
         this.tileset = this.map.addTilesetImage('base', 'tiles');
+        this.tileset1 = this.map1.addTilesetImage('baka', 'tiles1');
+
         //on agrandit le champ de la caméra du coup
         let largeurDuTableau=this.map.widthInPixels;
         let hauteurDuTableau=this.map.heightInPixels;
@@ -51,6 +62,7 @@ class TableauTiled extends Tableau{
         //---- ajoute les plateformes simples ----------------------------
 
         this.sol = this.map.createLayer('sol', this.tileset, 0, 0);
+        this.fond = this.map1.createLayer('fond', this.tileset1, 0, 0);
         //this.derriere = this.map.createLayer('derriere', this.tileset, 0, 0);
         //this.lave = this.map.createLayer('lave', this.tileset, 0, 0);
         //this.devant = this.map.createLayer('devant', this.tileset, 0, 0);
@@ -103,6 +115,16 @@ class TableauTiled extends Tableau{
         this.modMonstersObjects.forEach(monsterObject => {
             let monster=new Monster(this,monsterObject.x,monsterObject.y);
             this.monstersContainer.add(monster);
+            ici.physics.add.collider(monster, this.sol);
+        });
+
+        let platformContainer=this.add.container();
+        ici.platformObjects = ici.map.getObjectLayer('plat')['objects'];
+        // On crée des montres volants pour chaque objet rencontré
+        ici.platformObjects.forEach(platformObject => {
+            let plat=new Plat(this,platformObject.x,platformObject.y);
+            platformContainer.add(plat);
+            ici.physics.add.collider(plat, this.player);
         });
 
         //--------effet sur la lave------------------------
@@ -256,8 +278,11 @@ class TableauTiled extends Tableau{
         //this.stars.setDepth(z--);
         //starsFxContainer.setDepth(z--);
         //this.devant.setDepth(z--);
+        platformContainer.setDepth(z--);
         this.sol.setDepth(z--);
         this.player.setDepth(z--);
+        this.fond.setDepth(z--); 
+
         //this.derriere.setDepth(z--);
         //this.sky.setDepth(z--);
 

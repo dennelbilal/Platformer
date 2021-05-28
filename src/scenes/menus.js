@@ -28,7 +28,7 @@ class menus extends Phaser.Scene{
   
 
 
-        let startB1 = this.add.sprite(game.config.width/2-8, game.config.height -150, 'bouton');
+        //let startB1 = this.add.sprite(game.config.width/2-8, game.config.height -150, 'bouton');
        
         //startB.scale = 0.5;
 
@@ -38,7 +38,7 @@ class menus extends Phaser.Scene{
         //let startBText1 = this.add.text(game.config.width/2-72, game.config.height -265, "Play",{font: "28px visitor", fill:"#000000"}); //375,560,FFF
        
         //tweens permet de donner un petit effet à la cible voulue (target)
-        this.tweens.add(
+        /*this.tweens.add(
         {
             targets:[startB1],
             duration:2000,
@@ -51,7 +51,7 @@ class menus extends Phaser.Scene{
                 from:0,
                 to:1,
             }
-        })
+        })*/
 
         
         

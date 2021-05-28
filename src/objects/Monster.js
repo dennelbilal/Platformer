@@ -6,7 +6,7 @@ class Monster extends ObjetEnnemi{
      * @param y
      */
     constructor(scene, x, y) {
-        super(scene, x, y, "Mob");
+        super(scene, x, y-100, "Mob");
         //pas de gravité
         this.body.allowGravity=true;
 
@@ -15,7 +15,7 @@ class Monster extends ObjetEnnemi{
 
         //on réduit un peu la zone de hit
         this.setBodySize(this.body.width,this.body.height);
-        this.setOffset(0, 0);
+        // this.setOffset(0, 0);
 
         //définir les propriété que l'on va utiliser dans notre animation
 
@@ -26,13 +26,13 @@ class Monster extends ObjetEnnemi{
 
         // Y
         this.originalY=y;
-        this.minY=y-5;
-        this.maxY=y+5;
+        this.minY=y;
+        this.maxY=y;
 
         // on applique les propriété du début de l'animation
         this.x=this.minX;
         this.y=this.minY;
-        this.alpha=0;
+        this.alpha=1;
         let me=this;
 
         //on fait apparaitre notre objet avec un petit delay, puis on lance l'animation
@@ -64,15 +64,15 @@ class Monster extends ObjetEnnemi{
                 yoyo: -1,
                 repeat:-1,
                 flipX:true,
-            },
-            y: {
-                from: this.minY,
-                to:this.maxY,
-                duration: 500,
-                ease: 'Sine.easeInOut',
-                yoyo: -1,
-                repeat:-1
             }
+            // y: {
+            //     from: this.minY,
+            //     to:this.maxY,
+            //     duration: 500,
+            //     ease: 'Sine.easeInOut',
+            //     yoyo: -1,
+            //     repeat:-1
+            // }
         });
     }
 

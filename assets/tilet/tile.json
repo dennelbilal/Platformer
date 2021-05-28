@@ -158,7 +158,7 @@
  "nextobjectid":55,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.4.2",
+ "tiledversion":"1.6.0",
  "tileheight":64,
  "tilesets":[
         {
@@ -173,9 +173,23 @@
          "tilecount":20,
          "tileheight":64,
          "tilewidth":64
+        }, 
+        {
+         "columns":5,
+         "firstgid":21,
+         "image":"baka.png",
+         "imageheight":273,
+         "imagewidth":370,
+         "margin":0,
+         "name":"baka",
+         "spacing":0,
+         "tilecount":20,
+         "tileheight":64,
+         "tilewidth":64,
+         "transparentcolor":"#ff00ff"
         }],
  "tilewidth":64,
  "type":"map",
- "version":1.4,
+ "version":"1.6",
  "width":70
 }
