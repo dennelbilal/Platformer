@@ -11,6 +11,8 @@ class Player extends Phaser.Physics.Arcade.Sprite{
         this.setDisplaySize(30,43)
         this.setBodySize(this.body.width,this.body.height+39);
         this.setOffset(20, 5);
+        this.rechargeSonTir = false; //bool pour le rechargement
+
 
         this.anims.create({
             key: 'left',
@@ -76,12 +78,12 @@ class Player extends Phaser.Physics.Arcade.Sprite{
         switch (true){
             case this._directionX<0:
                 this.sens=-1;
-                this.setVelocityX(-300);
+                this.setVelocityX(-250);
                 this.anims.play('left', true);
                 break;
             case this._directionX>0:
                 this.sens=1;
-                this.setVelocityX(300);
+                this.setVelocityX(250);
                 this.anims.play('right', true);
                 break;
             default:
@@ -106,7 +108,7 @@ class Player extends Phaser.Physics.Arcade.Sprite{
 
         if(this._directionY<0){
             if(this.body.blocked.down || this.body.touching.down){
-                this.setVelocityY(-550);
+                this.setVelocityY(-500);
             }
         }
 
@@ -114,10 +116,17 @@ class Player extends Phaser.Physics.Arcade.Sprite{
     }
     shoot()
     {
-        var bullet = new Tir(this.scene,this.x, this.y);
-        console.log("Tir");
-        setTimeout(function(){
-            bullet.destroy();
-        },1500);
+        if(this.rechargeSonTir === false) { //on vérifie si on a recharger le coup
+            
+            this.rechargeSonTir = true; //lance la recharge
+            var bullet = new Tir(this.scene,this.x, this.y);
+            console.log("Tir");
+            setTimeout(function(){
+                bullet.destroy();
+            },800);
+            setTimeout(function () {
+                Tableau.current.player.rechargeSonTir = false;
+            }, 1100);
+        }
     }
 }

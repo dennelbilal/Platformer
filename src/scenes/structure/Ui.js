@@ -3,6 +3,7 @@ class Ui extends Phaser.Scene{
     {
         super({ key: 'ui', active: true });
         window.ui=this;
+        this.hp=3;
     }
     preload(){
         this.load.image('ui/full-screen-icon', 'assets/ui/full-screen.png');

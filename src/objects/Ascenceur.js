@@ -5,12 +5,21 @@ class Ascenceur extends ObjetPhysique{
     //    this.setBodySize(this.body.width,this.body.height-45);
        this.setOffset(0, 45);
        this.setBounce(0);
-      //  this.setCollideWorldBounds(true);
+       this.setCollideWorldBounds(true);
        this.setImmovable(true);
        // this.setVelocityX(50);
        // this.setDepth(10);
        this.body.allowGravity=false;
      //this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
-
-    }
+      //this.scene.tweens.add({
+   /*y: {
+                 from: this.minY,
+                 to:this.maxY,
+                 duration: 500,
+                 ease: 'Sine.easeInOut',
+                 yoyo: -1,
+                 repeat:-1
+             }
+    }*/
  }
+}

@@ -64,10 +64,14 @@ class Tableau extends Phaser.Scene{
 
     Bounding (player, ascenceur)
     {
-        // setTimeout(function(){
-            player.setVelocityY(-850);
-        // },600);
-    }
+         setTimeout(function(){
+            player.setVelocityY(-550);
+            
+         },-250);
+}
+
+   
+       
 
     
     // ui.gagne();

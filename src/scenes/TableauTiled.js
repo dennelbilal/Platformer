@@ -2,39 +2,23 @@ class TableauTiled extends Tableau{
     constructor(){
         super("jeu");
       }
-    /**
-     * Ce tableau démontre comment se servir de Tiled, un petit logiciel qui permet de designer des levels et de les importer dans Phaser (entre autre).
-     *
-     * Ce qui suit est très fortement inspiré de ce tuto :
-     * https://stackabuse.com/phaser-3-and-tiled-building-a-platformer/
-     *
-     * Je vous conseille aussi ce tuto qui propose quelques alternatives (la manière dont son découpées certaines maisons notamment) :
-     * https://medium.com/@michaelwesthadley/modular-game-worlds-in-phaser-3-tilemaps-1-958fc7e6bbd6
-     */
     preload() {
         super.preload();
         // ------pour TILED-------------
         // nos images
         this.load.image('tiles', 'assets/tilet/Sol grotte 2.png');
         this.load.image('tiles1', 'assets/tilet/bakabaka.png');
+        this.load.image('tiles2', 'assets/tilet/rien.png');
+        
         //les données du tableau qu'on a créé dans TILED
-        this.load.image('tir', 'assets/star.png');
+        this.load.image('tir', 'assets/fleche.png');
         this.load.image('Ascenceur', 'assets/spike.png');
         this.load.image('Plat', 'assets/tilet/BOIs.png');
-        this.load.image('Mob', 'assets/Mob.jpg');
+        this.load.image('Mob', 'assets/Mob.png');
 
-
-
-
-        this.load.tilemapTiledJSON('map', 'assets/tilet/Tiled3.json');
+        this.load.tilemapTiledJSON('map', 'assets/tilet/Tiled4.json');
         this.load.tilemapTiledJSON('map1', 'assets/tilet/tileddebug.json');
-
-        // -----et puis aussi-------------
-        //this.load.image('monster-fly', 'assets/monster-fly.png');
-        
-        //atlas de texture généré avec https://free-tex-packer.com/app/
-        //on y trouve notre étoiles et une tête de mort
-        
+        this.load.tilemapTiledJSON('map2', 'assets/tilet/tt.json');
     }
     create() {
         super.create();
@@ -47,10 +31,12 @@ class TableauTiled extends Tableau{
         //notre map
         this.map = this.make.tilemap({ key: 'map' });
         this.map1 = this.make.tilemap({ key: 'map1' });
+        this.map2 = this.make.tilemap({ key: 'map2' });
 
         //nos images qui vont avec la map
         this.tileset = this.map.addTilesetImage('base', 'tiles');
         this.tileset1 = this.map1.addTilesetImage('baka', 'tiles1');
+        this.tileset2 = this.map2.addTilesetImage('rien', 'tiles2');
 
         //on agrandit le champ de la caméra du coup
         let largeurDuTableau=this.map.widthInPixels;
@@ -63,6 +49,7 @@ class TableauTiled extends Tableau{
 
         this.sol = this.map.createLayer('sol', this.tileset, 0, 0);
         this.fond = this.map1.createLayer('fond', this.tileset1, 0, 0);
+        this.fond2 = this.map2.createLayer('fond2', this.tileset2, 0, 0);
         //this.derriere = this.map.createLayer('derriere', this.tileset, 0, 0);
         //this.lave = this.map.createLayer('lave', this.tileset, 0, 0);
         //this.devant = this.map.createLayer('devant', this.tileset, 0, 0);
@@ -281,8 +268,9 @@ class TableauTiled extends Tableau{
         platformContainer.setDepth(z--);
         this.sol.setDepth(z--);
         this.player.setDepth(z--);
+        this.fond2.setDepth(z--); 
         this.fond.setDepth(z--); 
-
+        
         //this.derriere.setDepth(z--);
         //this.sky.setDepth(z--);
 
