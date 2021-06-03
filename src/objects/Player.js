@@ -37,12 +37,14 @@ class Player extends Phaser.Physics.Arcade.Sprite{
             frames: this.anims.generateFrameNumbers('Tir', { start: 11, end: 14 }),
             frameRate: 10,
             repeat: -1
+            //repeatDelay: 200
         });
         this.anims.create({
             key: 'tir right',
             frames: this.anims.generateFrameNumbers('Tir', { start: 15, end: 18 }),
             frameRate: 10,
             repeat: -1
+            //repeatDelay: 200
         });
         this.anims.create({
             key: 'stance',
