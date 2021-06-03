@@ -18,6 +18,18 @@ class Tir extends ObjetPhysique{
       scene.physics.add.collider(this, scene.sol, function(){
          tir.destroy()
       });
+      /*this.anims.create({
+         key: 'tir left',
+         frames: this.anims.generateFrameNumbers('tir', { start: 0, end: 3 }),
+         frameRate: 10,
+         repeat: -1
+     });
+     this.anims.create({
+         key: 'tir right',
+         frames: this.anims.generateFrameNumbers('tir', { start: 4, end: 7 }),
+         frameRate: 10,
+         repeat: -1
+     });*/
       // scene.monstersContainer.iterate(monster2=>{
       //    scene.physics.add.overlap(this, monster2, function(){monster2.Tmortlol()}, null, scene);
       // })
