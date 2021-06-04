@@ -48,20 +48,15 @@ class Player extends Phaser.Physics.Arcade.Sprite{
 
         this._directionX=0;
         this._directionY=0;
+ }
 
-
-    }
-
-    set directionX(value){
+     set directionX(value){
         this._directionX=value;
     }
-    set directionY(value){
+     set directionY(value){
         this._directionY=value;
     }
 
-    /**
-     * arrête le joueur
-     */
     stop(){
         this.setVelocityX(0);
         this.setVelocityY(0);
@@ -69,11 +64,6 @@ class Player extends Phaser.Physics.Arcade.Sprite{
         this.directionX=0;
     }
 
-    
-    
-    /**
-     * Déplace le joueur en fonction des directions données
-     */
     move(){
 
         switch (true){
@@ -92,32 +82,18 @@ class Player extends Phaser.Physics.Arcade.Sprite{
                 this.anims.play('stance', true);
                 this.anims.play(this.sens===-1 ? 'back' : 'stance' ,true);
         }
-    }
-}
-        // switch (true){
-        //     case this._directionX<0:
-        //         this.setVelocityX(-180);
-        //         this.anims.play('left', true);
-        //         break;
-        //     case this._directionX>0:
+    
 
-        //         this.setVelocityX(180);
-        //         this.anims.play('right', true);
-        //         break;
-        //     default:
-        //         this.setVelocityX(0);
-        //         this.anims.play('turn');
-        // }
 
         if(this._directionY<0){
             if(this.body.blocked.down || this.body.touching.down){
                 this.setVelocityY(-500);
             }
         }
+    }
+    
+    shoot(){
 
-
-    shoot()
-    {
         if(this.rechargeSonTir === false) { //on vérifie si on a recharger le coup
             
             this.rechargeSonTir = true; //lance la recharge
@@ -131,3 +107,5 @@ class Player extends Phaser.Physics.Arcade.Sprite{
             }, 1100);
         }
     }
+}
+
