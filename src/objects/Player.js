@@ -23,7 +23,7 @@ class Player extends Phaser.Physics.Arcade.Sprite{
 
         this.anims.create({
             key: 'right',
-            frames: this.anims.generateFrameNumbers('joueur', { start: 5, end: 10 }),
+            frames: this.anims.generateFrameNumbers('joueur', { start: 5, end: 8 }),
             frameRate: 10,
             repeat: -1
         });
@@ -64,7 +64,8 @@ class Player extends Phaser.Physics.Arcade.Sprite{
         this.directionX=0;
     }
 
-    move(){
+    move()
+    {
 
         switch (true){
             case this._directionX<0:
@@ -92,7 +93,8 @@ class Player extends Phaser.Physics.Arcade.Sprite{
         }
     }
     
-    shoot(){
+    shoot()
+    {
 
         if(this.rechargeSonTir === false) { //on vérifie si on a recharger le coup
             
