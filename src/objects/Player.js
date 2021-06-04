@@ -70,12 +70,11 @@ class Player extends Phaser.Physics.Arcade.Sprite{
     }
 
     
-    }
+    
     /**
      * Déplace le joueur en fonction des directions données
      */
-    player.move()
-    {
+    move(){
 
         switch (true){
             case this._directionX<0:
@@ -94,6 +93,7 @@ class Player extends Phaser.Physics.Arcade.Sprite{
                 this.anims.play(this.sens===-1 ? 'back' : 'stance' ,true);
         }
     }
+}
         // switch (true){
         //     case this._directionX<0:
         //         this.setVelocityX(-180);
