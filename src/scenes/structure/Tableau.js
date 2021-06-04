@@ -53,7 +53,7 @@ class Tableau extends Phaser.Scene{
     }
     update(){
         super.update();
-        this.move();
+        this.player.move();
         this.tirPlayer();
     }
     tirPlayer(){
