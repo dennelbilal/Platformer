@@ -32,20 +32,6 @@ class Player extends Phaser.Physics.Arcade.Sprite{
             frames: [ { key: 'player', frame: 4 } ],
             frameRate: 20
         });
-        /*this.anims.create({
-            key: 'jumpleft',
-            frames: this.anims.generateFrameNumbers('saut', { start: 0, end: 4 }),
-            frameRate: 10,
-            repeat: -1
-            //repeatDelay: 200
-        });
-        this.anims.create({
-            key: 'jumpright',
-            frames: this.anims.generateFrameNumbers('saut', { start: 5, end: 9 }),
-            frameRate: 10,
-            repeat: -1
-            //repeatDelay: 200
-        });*/
         this.anims.create({
             key: 'stance',
             frames: this.anims.generateFrameNumbers('player_stance', { start: 1, end: 1  }),
