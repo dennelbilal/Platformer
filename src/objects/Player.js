@@ -83,48 +83,13 @@ class Player extends Phaser.Physics.Arcade.Sprite{
         this.directionX=0;
     }
 
-    update()
-    {
-        this.animation();
-    }
-
-    animation() // bien plus fluide qu'un switch (et y aura aucun bug avec ça)
-    {
-        if(this.body.velocity.x < 0)
-        {
-            if(this.body.velocity.y < 0)
-            {
-                this.anims.play('jumpleft', true);
-            }
-            else if(this.body.velocity.y > 0)
-            {
-                this.anims.play('jumpleft', true);
-            }
-            else
-            {
-                //this.anims.play('left', true);
-            }
-        }
-        else if(this.body.velocity.x > 0)
-        {
-            if(this.body.velocity.y < 0)
-            {
-                this.anims.play('jumpright', true);
-            }
-            else if(this.body.velocity.y > 0)
-            {
-                this.anims.play('jumpright', true);
-            }
-            else
-            {
-                //this.anims.play('right', true);
-            }
-        }
+    
     }
     /**
      * Déplace le joueur en fonction des directions données
      */
-    move(){
+    move()
+    {
 
         switch (true){
             case this._directionX<0:
@@ -142,6 +107,7 @@ class Player extends Phaser.Physics.Arcade.Sprite{
                 this.anims.play('stance', true);
                 this.anims.play(this.sens===-1 ? 'back' : 'stance' ,true);
         }
+    }
         // switch (true){
         //     case this._directionX<0:
         //         this.setVelocityX(-180);
@@ -164,7 +130,6 @@ class Player extends Phaser.Physics.Arcade.Sprite{
         }
 
 
-    }
     shoot()
     {
         if(this.rechargeSonTir === false) { //on vérifie si on a recharger le coup
@@ -180,4 +145,3 @@ class Player extends Phaser.Physics.Arcade.Sprite{
             }, 1100);
         }
     }
-}
