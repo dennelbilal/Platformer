@@ -23,16 +23,12 @@ class Tableau extends Phaser.Scene{
         );
         this.load.spritesheet('player_stance',
             'assets/joueur3.png',
-            { frameWidth: 71, frameHeight: 76  }
+            { frameWidth: 71, frameHeight: 75 }
         );
         this.load.spritesheet('Laser',
         'assets/laser_spriteSheet.png',
         { frameWidth: 25, frameHeight: 167  }
-        );
-        /*this.load.spritesheet('saut',
-        'assets/anisaut.png',
-        { frameWidth: 71, frameHeight: 76  }
-        );*/
+        );    
     }
     create(){
         Tableau.current=this;
@@ -57,7 +53,7 @@ class Tableau extends Phaser.Scene{
     }
     update(){
         super.update();
-        this.player.move();
+        this.move();
         this.tirPlayer();
     }
     tirPlayer(){
