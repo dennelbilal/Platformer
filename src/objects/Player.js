@@ -32,20 +32,20 @@ class Player extends Phaser.Physics.Arcade.Sprite{
             frames: [ { key: 'player', frame: 4 } ],
             frameRate: 20
         });
-        this.anims.create({
-            key: 'tir left',
-            frames: this.anims.generateFrameNumbers('Tir', { start: 11, end: 14 }),
+        /*this.anims.create({
+            key: 'jumpleft',
+            frames: this.anims.generateFrameNumbers('saut', { start: 0, end: 4 }),
             frameRate: 10,
             repeat: -1
             //repeatDelay: 200
         });
         this.anims.create({
-            key: 'tir right',
-            frames: this.anims.generateFrameNumbers('Tir', { start: 15, end: 18 }),
+            key: 'jumpright',
+            frames: this.anims.generateFrameNumbers('saut', { start: 5, end: 9 }),
             frameRate: 10,
             repeat: -1
             //repeatDelay: 200
-        });
+        });*/
         this.anims.create({
             key: 'stance',
             frames: this.anims.generateFrameNumbers('player_stance', { start: 1, end: 1  }),
@@ -83,6 +83,44 @@ class Player extends Phaser.Physics.Arcade.Sprite{
         this.directionX=0;
     }
 
+    update()
+    {
+        this.animation();
+    }
+
+    animation() // bien plus fluide qu'un switch (et y aura aucun bug avec ça)
+    {
+        if(this.body.velocity.x < 0)
+        {
+            if(this.body.velocity.y < 0)
+            {
+                this.anims.play('jumpleft', true);
+            }
+            else if(this.body.velocity.y > 0)
+            {
+                this.anims.play('jumpleft', true);
+            }
+            else
+            {
+                //this.anims.play('left', true);
+            }
+        }
+        else if(this.body.velocity.x > 0)
+        {
+            if(this.body.velocity.y < 0)
+            {
+                this.anims.play('jumpright', true);
+            }
+            else if(this.body.velocity.y > 0)
+            {
+                this.anims.play('jumpright', true);
+            }
+            else
+            {
+                //this.anims.play('right', true);
+            }
+        }
+    }
     /**
      * Déplace le joueur en fonction des directions données
      */

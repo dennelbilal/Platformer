@@ -23,16 +23,16 @@ class Tableau extends Phaser.Scene{
         );
         this.load.spritesheet('player_stance',
             'assets/joueur3.png',
-            { frameWidth: 71, frameHeight: 75  }
+            { frameWidth: 71, frameHeight: 76  }
         );
         this.load.spritesheet('Laser',
         'assets/laser_spriteSheet.png',
         { frameWidth: 25, frameHeight: 167  }
         );
-        this.load.spritesheet('Tir',
-        'assets/anitir.png',
+        /*this.load.spritesheet('saut',
+        'assets/anisaut.png',
         { frameWidth: 71, frameHeight: 76  }
-        );
+        );*/
     }
     create(){
         Tableau.current=this;

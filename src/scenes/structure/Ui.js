@@ -17,7 +17,7 @@ class Ui extends Phaser.Scene{
          * @type {Phaser.GameObjects.Text}
          * @private
          */
-        this._scoreText = this.add.text(16, 16, '...', {
+        this._scoreText = this.add.text(16, 16, '', {
             font:'32px "Hanalei Fill"',
             fill: '#fff'
         });
@@ -27,7 +27,7 @@ class Ui extends Phaser.Scene{
          * @type {Phaser.GameObjects.Text}
          * @private
          */
-        this._tableauText = this.add.text(this.sys.canvas.width-16, 16, '...', {
+        this._tableauText = this.add.text(this.sys.canvas.width-16, 16, '', {
             font:'32px "Hanalei Fill"',
             align: 'right',
             fill: '#fff'
@@ -38,7 +38,7 @@ class Ui extends Phaser.Scene{
          * @type {Phaser.GameObjects.Text}
          * @private
          */
-        this._tableauTextClass = this.add.text(this.sys.canvas.width-16, 16+32, '...', {
+        this._tableauTextClass = this.add.text(this.sys.canvas.width-16, 16+32, '', {
             font:'24px "Hanalei Fill"',
             align: 'right',
             fill: '#fff',
